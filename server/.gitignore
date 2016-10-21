@@ -1,0 +1,13 @@
+.idea/
+.vscode/
+.settings/
+target/
+node_modules/
+build/
+jsconfig.json
+npm-debug.log
+.classpath
+.project
+javac-services.0.log
+javac-services.0.log.lck
+*.iml
