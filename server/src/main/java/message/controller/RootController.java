@@ -9,22 +9,22 @@ import java.util.List;
 
 @RestController
 public class RootController {
-    private List<String> messages = new ArrayList<>();
+    private List<Message> messages = new ArrayList<>();
 
     @PostConstruct
     private void init() {
-        messages.add("Message 1");
-        messages.add("Message 2");
+        messages.add(new Message("Message 1", false));
+        messages.add(new Message("Message 2", false));
     }
 
     @RequestMapping(value = "/message", method = RequestMethod.POST)
     public Message addMessage(@RequestBody Message message) {
-        messages.add(message.getText());
+        messages.add(message);
         return message;
     }
 
     @RequestMapping(value = "/message/list", method = RequestMethod.GET)
-    public List<String> getMessages() {
+    public List<Message> getMessages() {
         return messages;
     }
 }

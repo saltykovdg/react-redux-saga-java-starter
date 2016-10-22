@@ -33,9 +33,9 @@ class App extends Component {
 }
 
 App.propTypes = {
-  children: PropTypes.objectOf(PropTypes.shape),
+  children: PropTypes.objectOf(PropTypes.shape).isRequired,
   dispatch: PropTypes.func.isRequired,
-  intl: PropTypes.objectOf(PropTypes.shape),
+  intl: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 // Retrieve data from store as props

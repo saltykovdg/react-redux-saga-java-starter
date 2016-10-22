@@ -23,7 +23,7 @@ function MessageList(props) {
 }
 
 MessageList.propTypes = {
-  messages: PropTypes.arrayOf(React.PropTypes.string).isRequired,
+  messages: PropTypes.arrayOf(PropTypes.shape).isRequired,
 };
 
 export default MessageList;

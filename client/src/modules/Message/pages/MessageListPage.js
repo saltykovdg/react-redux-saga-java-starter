@@ -42,7 +42,7 @@ function mapStateToProps(state) {
 }
 
 MessageListPage.propTypes = {
-  messages: PropTypes.arrayOf(PropTypes.string).isRequired,
+  messages: PropTypes.arrayOf(PropTypes.shape).isRequired,
   last_state: PropTypes.string.isRequired,
   dispatch: PropTypes.func.isRequired,
 };

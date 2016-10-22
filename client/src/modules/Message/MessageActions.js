@@ -9,16 +9,75 @@ export const SEND_MESSAGE_SUCCESS = 'SEND_MESSAGE_SUCCESS';
 export const SEND_MESSAGE_FAILED = 'SEND_MESSAGE_FAILED';
 export const REMOVE_LAST_MESSAGE = 'REMOVE_LAST_MESSAGE';
 
+const GETTING_MESSAGES_INTL_ID = 'gettingMessages';
+const GET_MESSAGES_FAILED_INTL_ID = 'getMessagesFailed';
+const SENDING_MESSAGE_INTL_ID = 'sendingMessage';
+const SEND_MESSAGE_FAILED_INTL_ID = 'sendMessageFailed';
+
 // Export Actions
+export const fetchMessages = () => {
+  return {
+    type: GET_MESSAGES,
+  };
+};
+
+export const gettingMessages = () => {
+  return {
+    type: GETTING_MESSAGES,
+    text: GETTING_MESSAGES_INTL_ID,
+    use_intl: true,
+  };
+};
+
+export const getMessagesSuccess = (data) => {
+  return {
+    type: GET_MESSAGES_SUCCESS,
+    data,
+  };
+};
+
+export const getMessagesFailed = () => {
+  return {
+    type: GET_MESSAGES_FAILED,
+    text: GET_MESSAGES_FAILED_INTL_ID,
+    use_intl: true,
+  };
+};
+
 export const sendMessage = (text) => {
   return {
     type: SEND_MESSAGE,
     text,
+    use_intl: false,
   };
 };
 
-export const fetchMessages = () => {
+export const sendingMessage = () => {
   return {
-    type: GET_MESSAGES,
+    type: SENDING_MESSAGE,
+    text: SENDING_MESSAGE_INTL_ID,
+    use_intl: true,
+  };
+};
+
+export const sendMessageSuccess = (message) => {
+  return {
+    type: SEND_MESSAGE_SUCCESS,
+    text: message.text,
+    use_intl: message.use_intl,
+  };
+};
+
+export const sendMessageFailed = () => {
+  return {
+    type: SEND_MESSAGE_FAILED,
+    text: SEND_MESSAGE_FAILED_INTL_ID,
+    use_intl: true,
+  };
+};
+
+export const removeLastMessage = () => {
+  return {
+    type: REMOVE_LAST_MESSAGE,
   };
 };

@@ -1,15 +1,18 @@
 import React, { PropTypes } from 'react';
+import { FormattedMessage } from 'react-intl';
 
 function MessageListItem(props) {
+  const message = props.message;
+  const messageText = message.use_intl ? <FormattedMessage id={message.text} /> : message.text;
   return (
     <li>
-      {props.message}
+      {messageText}
     </li>
   );
 }
 
 MessageListItem.propTypes = {
-  message: PropTypes.string.isRequired,
+  message: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 export default MessageListItem;

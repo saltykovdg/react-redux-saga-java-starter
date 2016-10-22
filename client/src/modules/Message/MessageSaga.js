@@ -4,25 +4,25 @@ import { fetchMessages, sendMessage } from './MessageApi';
 
 import {
   GET_MESSAGES,
-  GETTING_MESSAGES,
-  GET_MESSAGES_SUCCESS,
-  GET_MESSAGES_FAILED,
   SEND_MESSAGE,
-  SENDING_MESSAGE,
-  SEND_MESSAGE_SUCCESS,
-  SEND_MESSAGE_FAILED,
-  REMOVE_LAST_MESSAGE,
+  sendingMessage,
+  sendMessageSuccess,
+  removeLastMessage,
+  sendMessageFailed,
+  gettingMessages,
+  getMessagesSuccess,
+  getMessagesFailed,
 } from './MessageActions';
 
 export function* _sendMessage(action) {
-  yield put({ type: SENDING_MESSAGE });
+  yield put(sendingMessage());
   const response = yield call(sendMessage, action.text);
   yield delay(1500);
-  yield put({ type: REMOVE_LAST_MESSAGE });
+  yield put(removeLastMessage());
   if (!response.error) {
-    yield put({ type: SEND_MESSAGE_SUCCESS, text: response.text });
+    yield put(sendMessageSuccess(response));
   } else {
-    yield put({ type: SEND_MESSAGE_FAILED });
+    yield put(sendMessageFailed());
   }
 }
 
@@ -31,14 +31,14 @@ export function* watchSendMessage() {
 }
 
 export function* _getMessages() {
-  yield put({ type: GETTING_MESSAGES });
+  yield put(gettingMessages());
   const response = yield call(fetchMessages);
   yield delay(1500);
-  yield put({ type: REMOVE_LAST_MESSAGE });
+  yield put(removeLastMessage());
   if (!response.error) {
-    yield put({ type: GET_MESSAGES_SUCCESS, data: response });
+    yield put(getMessagesSuccess(response));
   } else {
-    yield put({ type: GET_MESSAGES_FAILED });
+    yield put(getMessagesFailed());
   }
 }
 

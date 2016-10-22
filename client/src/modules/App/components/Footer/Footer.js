@@ -21,7 +21,7 @@ function Footer(props) {
 
 Footer.propTypes = {
   switchLanguage: PropTypes.func.isRequired,
-  intl: PropTypes.objectOf(PropTypes.shape),
+  intl: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
 
 export default Footer;

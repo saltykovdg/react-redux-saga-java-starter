@@ -22,5 +22,5 @@ export default function App(props) {
 }
 
 App.propTypes = {
-  store: PropTypes.objectOf(PropTypes.shape),
+  store: PropTypes.objectOf(PropTypes.shape).isRequired,
 };
