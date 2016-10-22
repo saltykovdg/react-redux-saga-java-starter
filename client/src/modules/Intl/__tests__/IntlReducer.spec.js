@@ -2,13 +2,6 @@ import reducer from '../IntlReducer';
 import { switchLanguage } from '../IntlActions';
 import { localizationData, enabledLanguages } from '../../../Intl/setup';
 
-// test('action for SWITCH_LANGUAGE is working', reducerTest(
-//   intlReducer,
-//   { locale: 'en', enabledLanguages, ...localizationData.en },
-//   switchLanguage('ru'),
-//   { locale: 'ru', enabledLanguages, ...localizationData.ru },
-// ));
-
 const initLocale1 = (global.navigator && global.navigator.language) || 'en';
 const initialState1 = {
   locale: initLocale1,
