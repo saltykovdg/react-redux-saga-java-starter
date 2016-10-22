@@ -4,6 +4,7 @@
 target/
 node_modules/
 build/
+coverage/
 jsconfig.json
 npm-debug.log
 .classpath

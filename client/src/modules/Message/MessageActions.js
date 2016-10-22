@@ -9,10 +9,10 @@ export const SEND_MESSAGE_SUCCESS = 'SEND_MESSAGE_SUCCESS';
 export const SEND_MESSAGE_FAILED = 'SEND_MESSAGE_FAILED';
 export const REMOVE_LAST_MESSAGE = 'REMOVE_LAST_MESSAGE';
 
-const GETTING_MESSAGES_INTL_ID = 'gettingMessages';
-const GET_MESSAGES_FAILED_INTL_ID = 'getMessagesFailed';
-const SENDING_MESSAGE_INTL_ID = 'sendingMessage';
-const SEND_MESSAGE_FAILED_INTL_ID = 'sendMessageFailed';
+export const GETTING_MESSAGES_INTL_ID = 'gettingMessages';
+export const GET_MESSAGES_FAILED_INTL_ID = 'getMessagesFailed';
+export const SENDING_MESSAGE_INTL_ID = 'sendingMessage';
+export const SEND_MESSAGE_FAILED_INTL_ID = 'sendMessageFailed';
 
 // Export Actions
 export const fetchMessages = () => {
