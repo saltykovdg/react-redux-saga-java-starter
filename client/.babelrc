@@ -2,8 +2,7 @@
   "presets": [
     "es2015",
     "stage-0",
-    "react",
-    "airbnb"
+    "react"
   ],
   "plugins": [
     "react-hot-loader/babel"

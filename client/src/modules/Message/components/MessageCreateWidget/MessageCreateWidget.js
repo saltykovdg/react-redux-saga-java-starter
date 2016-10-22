@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { injectIntl, intlShape } from 'react-intl';
 import './MessageCreateWidget.scss';
 
-class MessageCreateWidget extends Component {
+export class MessageCreateWidget extends Component {
   constructor() {
     super();
     this.state = {
