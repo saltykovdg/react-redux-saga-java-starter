@@ -38,4 +38,10 @@ describe('message create widget has correct calls', () => {
     expect(onPost.calledOnce).toBe(true);
     expect(onPost.calledWith(testMessage)).toBe(true);
   });
+  it('doesn\'t calls onPost', () => {
+    const onPost = sinon.spy();
+    const wrapper = mountWithIntl(<MessageCreateWidget onPost={onPost} />);
+    wrapper.find('button').simulate('click');
+    expect(onPost.calledOnce).toBe(false);
+  });
 });
