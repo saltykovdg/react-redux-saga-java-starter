@@ -7,10 +7,13 @@ import { intl } from '../../../../util/react-intl-test-helper';
 const enabledLanguages = ['en', 'ru'];
 const intlProp = { ...intl, enabledLanguages };
 
+const props = {
+  switchLanguage: () => {},
+  intl: intlProp,
+};
+
 describe('renders the footer properly', () => {
-  const wrapper = shallow(
-    <Footer switchLanguage={() => {}} intl={intlProp} />
-  );
+  const wrapper = shallow(<Footer {...props} />);
   it('contains footer element', () => {
     expect(wrapper.find('footer').length).toBe(1);
   });
@@ -18,6 +21,7 @@ describe('renders the footer properly', () => {
     expect(wrapper.find('footer').containsMatchingElement(<FormattedMessage id="switchLanguage" />)).toBe(true);
   });
   it('contains switch language buttons element', () => {
-    expect(wrapper.find('input').length).toBe(enabledLanguages.length);
+    expect(wrapper.find('button').length).toBe(enabledLanguages.length);
   });
 });
+

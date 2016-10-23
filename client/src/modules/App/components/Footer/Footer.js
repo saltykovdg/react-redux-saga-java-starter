@@ -3,12 +3,7 @@ import { FormattedMessage } from 'react-intl';
 
 function Footer(props) {
   const languageNodes = props.intl.enabledLanguages.map(
-    lang =>
-      <input
-        type="button"
-        key={lang} onClick={() => props.switchLanguage(lang)}
-        value={lang}
-      />
+    lang => <button key={lang} onClick={() => props.switchLanguage(lang)}>{lang}</button>
   );
 
   return (

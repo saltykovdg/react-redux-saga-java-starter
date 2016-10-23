@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 // Import Components
 import MessageList from '../components/MessageList';
-import MessageCreateWidget from '../components/MessageCreateWidget/MessageCreateWidget';
+import { MessageCreateWidget } from '../components/MessageCreateWidget/MessageCreateWidget';
 
 // Import Actions
 import { sendMessage, fetchMessages, GETTING_MESSAGES, SENDING_MESSAGE } from '../MessageActions';
