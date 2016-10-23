@@ -5,9 +5,7 @@ function MessageListItem(props) {
   const message = props.message;
   const messageText = message.use_intl ? <FormattedMessage id={message.text} /> : message.text;
   return (
-    <li>
-      {messageText}
-    </li>
+    <li>{messageText}</li>
   );
 }
 
