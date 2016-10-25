@@ -5,7 +5,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import DevTools from './modules/App/components/DevTools';
 import rootReducer from './reducers';
-import { watchSendMessage, watchGetMessage } from './modules/Message/MessageSaga';
+import rootSaga from './sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -21,8 +21,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 const store = createStore(rootReducer, compose(...enhancers));
 
-sagaMiddleware.run(watchSendMessage);
-sagaMiddleware.run(watchGetMessage);
+sagaMiddleware.run(rootSaga);
 
 // For hot reloading reducers
 if (module.hot) {

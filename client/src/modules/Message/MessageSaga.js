@@ -1,5 +1,5 @@
 import { takeLatest, delay } from 'redux-saga';
-import { call, put } from 'redux-saga/effects';
+import { call, put, fork } from 'redux-saga/effects';
 import { fetchMessages, sendMessage } from './MessageApi';
 
 import {
@@ -45,3 +45,8 @@ export function* _getMessages() {
 export function* watchGetMessage() {
   yield* takeLatest(GET_MESSAGES, _getMessages);
 }
+
+export const rootMessageSaga = [
+  fork(watchGetMessage),
+  fork(watchSendMessage),
+];
