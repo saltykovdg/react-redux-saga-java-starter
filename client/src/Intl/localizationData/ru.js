@@ -8,5 +8,9 @@ export default {
     sendMessageFailed: 'Отправить сообщение не удалось.',
     gettingMessages: 'Получение сообщений...',
     getMessagesFailed: 'Получить сообщения не удалось.',
+    welcomePageTitle: 'Добро пожаловать',
+    welcomePageText: 'Это всего лишь простое приложение.',
+    linkMain: 'Главная',
+    linkMessage: 'Сообщения',
   },
 };

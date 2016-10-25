@@ -9,6 +9,7 @@ import App from './modules/App/App';
  */
 if (process.env.NODE_ENV !== 'production') {
   // Require async routes only in development for react-hot-reloader to work.
+  require('./modules/App/components/WelcomePage');
   require('./modules/Message/pages/MessageListPage');
 }
 
@@ -17,6 +18,14 @@ if (process.env.NODE_ENV !== 'production') {
 export default (
   <Route path="/" component={App}>
     <IndexRoute
+      getComponent={(nextState, cb) => {
+        require.ensure([], (require) => {
+          cb(null, require('./modules/App/components/WelcomePage').default);
+        });
+      }}
+    />
+    <Route
+      path="/message"
       getComponent={(nextState, cb) => {
         require.ensure([], (require) => {
           cb(null, require('./modules/Message/pages/MessageListPage').default);

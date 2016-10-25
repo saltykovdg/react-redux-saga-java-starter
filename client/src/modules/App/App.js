@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 // Import Components
 import DevTools from './components/DevTools';
+import Header from './components/Header';
 import Footer from './components/Footer/Footer';
 
 // Import Actions
@@ -22,6 +23,7 @@ class App extends Component {
     return (
       <div>
         {this.state.isMounted && !window.devToolsExtension && process.env.NODE_ENV !== 'production' && <DevTools />}
+        <Header />
         {this.props.children}
         <Footer
           switchLanguage={lang => this.props.dispatch(switchLanguage(lang))}
