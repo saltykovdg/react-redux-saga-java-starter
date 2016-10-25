@@ -28,6 +28,11 @@ module.exports = {
       }
     ]
   },
+  devServer: {
+    port: 8090,
+    historyApiFallback: true,
+    inline: true,
+  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {

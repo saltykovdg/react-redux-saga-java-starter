@@ -7,8 +7,8 @@
   "license": "MIT",
   "scripts": {
     "test": "jest --coverage",
-    "start": "webpack-dev-server --config webpack.config.dev.js --port 8090 --hot --progress --colors --open",
-    "start:prod": "webpack-dev-server --config webpack.config.prod.js --port 8090 --inline --progress --colors --open",
+    "start": "webpack-dev-server --config webpack.config.dev.js --hot --progress --colors --open",
+    "start:prod": "webpack-dev-server --config webpack.config.prod.js --progress --colors --open",
     "build": "webpack --config webpack.config.prod.js --progress --profile --colors",
     "lint": "eslint src"
   },
