@@ -11,6 +11,6 @@ export default {
     welcomePageTitle: 'Welcome',
     welcomePageText: 'This is just a simple application',
     linkMain: 'Main',
-    linkMessage: 'Message',
+    linkMessages: 'Messages',
   },
 };

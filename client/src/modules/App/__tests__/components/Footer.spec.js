@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { shallow } from 'enzyme';
-import Footer from '../../components/Footer/Footer';
+import Footer from '../../components/Footer';
 import { intl } from '../../../../util/react-intl-test-helper';
 
 const enabledLanguages = ['en', 'ru'];

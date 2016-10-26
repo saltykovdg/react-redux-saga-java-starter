@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 // Import Components
 import DevTools from './components/DevTools';
 import Header from './components/Header';
-import Footer from './components/Footer/Footer';
+import Footer from './components/Footer';
 
 // Import Actions
 import { switchLanguage } from '../../modules/Intl/IntlActions';

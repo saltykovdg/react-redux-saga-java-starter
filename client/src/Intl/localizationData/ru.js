@@ -11,6 +11,6 @@ export default {
     welcomePageTitle: 'Добро пожаловать',
     welcomePageText: 'Это всего лишь простое приложение.',
     linkMain: 'Главная',
-    linkMessage: 'Сообщения',
+    linkMessages: 'Сообщения',
   },
 };

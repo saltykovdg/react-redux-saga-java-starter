@@ -12,7 +12,7 @@ function Header() {
       </li>
       <li>
         <Link to="/message">
-          <FormattedMessage id="linkMessage" />
+          <FormattedMessage id="linkMessages" />
         </Link>
       </li>
     </ul>
