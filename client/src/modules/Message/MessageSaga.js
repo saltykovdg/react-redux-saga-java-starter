@@ -17,9 +17,9 @@ import {
 export function* _sendMessage(action) {
   yield put(sendingMessage());
   const response = yield call(sendMessage, action.text);
-  yield delay(1500);
+  yield call(delay, 1500);
   yield put(removeLastMessage());
-  if (!response.error) {
+  if (response && !response.error) {
     yield put(sendMessageSuccess(response));
   } else {
     yield put(sendMessageFailed());
@@ -27,15 +27,15 @@ export function* _sendMessage(action) {
 }
 
 export function* watchSendMessage() {
-  yield* takeLatest(SEND_MESSAGE, _sendMessage);
+  yield call(takeLatest, SEND_MESSAGE, _sendMessage);
 }
 
 export function* _getMessages() {
   yield put(gettingMessages());
   const response = yield call(fetchMessages);
-  yield delay(1500);
+  yield call(delay, 1500);
   yield put(removeLastMessage());
-  if (!response.error) {
+  if (response && !response.error) {
     yield put(getMessagesSuccess(response));
   } else {
     yield put(getMessagesFailed());
@@ -43,7 +43,7 @@ export function* _getMessages() {
 }
 
 export function* watchGetMessage() {
-  yield* takeLatest(GET_MESSAGES, _getMessages);
+  yield call(takeLatest, GET_MESSAGES, _getMessages);
 }
 
 export const rootMessageSaga = [
