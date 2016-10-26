@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-export function WelcomePage() {
+function WelcomePage() {
   return (
     <div>
       <h1>
