@@ -31,4 +31,12 @@ public class Message {
     public void setUseIntl(boolean useIntl) {
         this.useIntl = useIntl;
     }
+
+    @Override
+    public String toString() {
+        return "Message{" +
+                "text='" + text + '\'' +
+                ", useIntl=" + useIntl +
+                '}';
+    }
 }
