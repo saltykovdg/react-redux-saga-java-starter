@@ -1,7 +1,7 @@
 import { enabledLanguages, localizationData } from '../../Intl/setup';
 import { SWITCH_LANGUAGE } from './IntlActions';
 
-const initLocale = (global.navigator && global.navigator.language) || 'en';
+const initLocale = ((global.navigator && global.navigator.language) || 'en').substring(0, 2);
 
 const initialState = {
   locale: initLocale,
